@@ -19,12 +19,12 @@
 # Do NOT "set -e"
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
-PATH=/sbin:/usr/sbin:/bin:/usr/bin
+PATH=/home/supervisor/bin:/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Run a set of applications as daemons."
 NAME=supervisord
-DAEMON=/usr/bin/$NAME   # Supervisord is installed in /usr/bin by default, but /usr/sbin would make more sense.
-SUPERVISORCTL=/usr/bin/supervisorctl
-PIDFILE=/var/run/$NAME.pid
+DAEMON=/home/supervisor/bin/$NAME   # Supervisord is installed in /usr/bin by default, but /usr/sbin would make more sense.
+SUPERVISORCTL=/home/supervisor/bin/supervisorctl
+PIDFILE=/home/supervisor/var/run/$NAME.pid
 DAEMON_ARGS="--pidfile ${PIDFILE}"
 SCRIPTNAME=/etc/init.d/$NAME
 
